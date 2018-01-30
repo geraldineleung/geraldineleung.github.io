@@ -13,7 +13,7 @@ function human(type, humanX, humanY){
   else if (type == 'girl') {
     this.sprite = game.add.sprite(humanX, humanY, 'girl');
   }
-  game.physics.p2.enable(this.sprite);
+  game.physics.p2.enable(this.sprite, true);
   //create triangular body shapes around boy sprite
   this.sprite.body.clearShapes();
   upBody = [{"shape": [-15,-30, 60,-30, 25,40]}];
