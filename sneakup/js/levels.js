@@ -108,7 +108,7 @@ function loadLevel(index){
   timer.start();
   ghost = game.add.sprite(levels[index].ghostPosition.x, levels[index].ghostPosition.y, 'ghost');
   ghost.scale.setTo(0.6,0.6);
-  game.physics.p2.enable(ghost,true);//true means the hitbox is visible
+  game.physics.p2.enable(ghost,false);//true means the hitbox is visible
   ghost.body.immovable = true;
   ghost.animations.add('left', [2], 10, true);
   ghost.animations.add('right', [3], 10, true);
@@ -127,7 +127,7 @@ function loadLevel(index){
   for (let i = 0; i < level.hitboxes.length; i++) {
     let hitbox = game.add.graphics(level.hitboxes[i].x,level.hitboxes[i].y);
     hitbox.drawRect(0,0,level.hitboxes[i].width,level.hitboxes[i].height);
-    game.physics.p2.enable(hitbox, true);
+    game.physics.p2.enable(hitbox, false);
     hitbox.body.static = true;
     hitboxArr.push(hitbox);
   }
